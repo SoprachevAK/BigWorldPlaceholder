@@ -3,6 +3,9 @@ class BigWorld():
 
     class Player:
         def __init__(self):
+            self.arenaTypeID = None
+            self.connectionMgr = None
+            self.team = None
             self.gunRotator = None
             self.autoAimVehicle = None
             self._PlayerAvatar__aimingInfo = None
@@ -16,6 +19,9 @@ class BigWorld():
 
         class Arena:
             def __init__(self):
+                self.periodLength = None
+                self.periodEndTime = None
+                self.period = None
                 self.bonusType = None
                 self.vehicles = {}
 
@@ -75,3 +81,11 @@ def LatencyInfo():
 
 def callback(time, callback):
     return None
+
+
+def component():
+    return None
+
+
+def getFPS():
+    return [0, 1]

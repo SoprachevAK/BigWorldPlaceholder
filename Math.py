@@ -90,6 +90,11 @@ class Vector3:
     y = None
     z = None
 
+    def __init__(self, x, y, z):
+        self.x = x
+        self.y = y
+        self.z = z
+
     def set(self):
         pass
 
