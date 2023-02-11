@@ -55,6 +55,9 @@ class BigWorld():
         def enableServerAim(self, enable):
             pass
 
+        def getOwnVehicleSpeeds(self):
+            pass
+
     class Entity:
         typeDescriptor = None  # type:BigWorld.Entity.TypeDescriptor
 
