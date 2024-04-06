@@ -1,97 +1,61 @@
-class BigWorld():
-  entities = {}
+from typing import Any, Callable, Tuple # noqa: F401
+from Avatar import PlayerAvatar # noqa: F401
 
-  class Player:
-    def __init__(self):
-      self.arenaTypeID = None
-      self.connectionMgr = None
-      self.team = None
-      self.gunRotator = None
-      self.autoAimVehicle = None
-      self._PlayerAvatar__aimingInfo = None
-      self.vehicle = None
-      self.vehicleTypeDescriptor = None  # type: BigWorld.Player.VehicleTypeDescriptor
-      self.playerVehicleID = None  # type: int
-      self.name = None  # type: str
+class WGUrlResponse:
+  responseCode = None  # type: int
+  body = None  # type: str
 
-    arena = None  # type: BigWorld.Player.Arena
-    arenaUniqueID = None
+class KeyEvent:
+  # ['__class__', '__delattr__', '__doc__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__new__', '__qualname__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'character', 'cursorPosition', 'isAltDown', 'isCtrlDown', 'isKeyDown', 'isKeyUp', 'isModifierDown', 'isMouseButton', 'isRepeatedEvent', 'isShiftDown', 'key', 'modifiers', 'repeatCount']
 
-    class Arena:
-      def __init__(self):
-        self.periodLength = None
-        self.periodEndTime = None
-        self.period = None
-        self.bonusType = None
-        self.vehicles = {}
-
-      arenaType = None  # type: BigWorld.Player.Arena.ArenaType
-
-      class ArenaType:
-        geometry = None  # type: str
-
-    class VehicleTypeDescriptor:
-      def __init__(self):
-        self.shot = None
-        self.turret = None
-        self.hull = None
-        self.gun = None  # type: BigWorld.Player.VehicleTypeDescriptor.Gun
-        self.level = None
-        self.type = None  # type: BigWorld.Player.VehicleTypeDescriptor.Type
-
-      class Type:
-        def __init__(self):
-          self.tags = None
-
-      class Gun:
-        def __init__(self):
-          self.shots = None
-          self.shotDispersionAngle = None
-          self.name = None
-
-    def getOwnVehiclePosition(self):
-      return None
-
-    def enableServerAim(self, enable):
-      pass
-
-    def getOwnVehicleSpeeds(self):
-      pass
-
-  class Entity:
-    typeDescriptor = None  # type:BigWorld.Entity.TypeDescriptor
-
-    class TypeDescriptor:
-      name = None  # type: str
+  character = None  # type: str
+  cursorPosition = None  # type: Tuple[float, float]
+  key = None  # type: int
+  modifiers = None  # type: int
+  repeatCount = None  # type: int
+  
+  def isAltDown(self):
+    return False
+  
+  def isCtrlDown(self):
+    return False
+  
+  def isKeyDown(self):
+    return False
+  
+  def isKeyUp(self):
+    return False
+  
+  def isModifierDown(self):
+    return False
+  
+  def isMouseButton(self):
+    return False
+  
+  def isRepeatedEvent(self):
+    return False
+  
+  def isShiftDown(self):
+    return False
+  
 
 
-entities = None
-
+def entity(entityID):
+  # type: (int) -> Any
+  return None
 
 def player():
-  # type: () -> BigWorld.Player
+  # type: () -> PlayerAvatar
   return None
-
-
-def serverTime():
-  return None
-
-
-def LatencyInfo():
-  return None
-
 
 def callback(time, callback):
+  # type: (int, Callable[[], Any]) -> None
   return None
 
-
-def component():
+def cancelCallback(id):
+  # type: (int) -> None
   return None
 
-
-def getFPS():
-  return [0, 1]
-
-
-def wg_openWebBrowser(url):
+def fetchURL(url, callback, headers, method='GET', postData=None):
+  # type: (str, Callable[[WGUrlResponse], Any], dict, str, str) -> None
   pass

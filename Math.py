@@ -1,3 +1,6 @@
+from typing import Tuple
+
+
 class Matrix:
     determinant = None
     scale = None
@@ -80,6 +83,13 @@ class Matrix:
     def setZero(self):
         pass
 
+class Vector4:
+    def __init__(self, x, y, z, w):
+        self.x = x
+        self.y = y
+        self.z = z
+        self.w = w
+
 class Vector3:
     pitch = None
     yaw = None
@@ -136,3 +146,13 @@ class Vector3:
 
     def dot(self):
         pass
+
+class Vector2:
+
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        
+def createTranslationMatrix(vector):
+    # type: (Tuple[float, float, float]) -> Matrix
+    return Matrix()
