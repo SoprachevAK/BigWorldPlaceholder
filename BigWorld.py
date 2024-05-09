@@ -49,7 +49,7 @@ def player():
   return None
 
 def callback(time, callback):
-  # type: (int, Callable[[], Any]) -> None
+  # type: (int, Callable[[], Any]) -> int
   return None
 
 def cancelCallback(id):
